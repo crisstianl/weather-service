@@ -1,0 +1,1562 @@
+[
+  {
+    "id": 2759794,
+    "name": "Amsterdam",
+    "country": "NL",
+    "region": "Europe",
+    "coord": {
+      "lon": 4.88969,
+      "lat": 52.374031
+    }
+  },
+  {
+    "id": 3041563,
+    "name": "Andorra la Vella",
+    "country": "AD",
+    "region": "Europe",
+    "coord": {
+      "lon": 1.52109,
+      "lat": 42.50779
+    }
+  },  
+  {
+    "id": 264371,
+    "name": "Athens",
+    "country": "GR",
+    "region": "Europe",
+    "coord": {
+      "lon": 23.716221,
+      "lat": 37.97945
+    }
+  },
+  {
+    "id": 792680,
+    "name": "Belgrade",
+    "country": "RS",
+    "region": "Europe",
+    "coord": {
+      "lon": 20.46513,
+      "lat": 44.804008
+    }
+  },    
+  {
+    "id": 2950159,
+    "name": "Berlin",
+    "country": "DE",
+    "region": "Europe",    
+    "coord": {
+      "lon": 13.41053,
+      "lat": 52.524368
+    }
+  },
+  {
+    "id": 2661552,
+    "name": "Bern",
+    "country": "CH",
+    "region": "Europe",
+    "coord": {
+      "lon": 7.44744,
+      "lat": 46.94809
+    }
+  },
+  {
+    "id": 3060972,
+    "name": "Bratislava",
+    "country": "SK",
+    "region": "Europe",
+    "coord": {
+      "lon": 17.106741,
+      "lat": 48.148159
+    }
+  },    
+  {
+    "id": 2800866,
+    "name": "Brussels",
+    "country": "BE",
+    "region": "Europe",    
+    "coord": {
+      "lon": 4.34878,
+      "lat": 50.850449
+    }
+  },
+  {
+    "id": 683506,
+    "name": "Bucharest",
+    "country": "RO",
+    "region": "Europe",    
+    "coord": {
+      "lon": 26.10626,
+      "lat": 44.432251
+    }
+  },
+  {
+    "id": 3054643,
+    "name": "Budapest",
+    "country": "HU",
+    "region": "Europe",
+    "coord": {
+      "lon": 19.039909,
+      "lat": 47.498009
+    }
+  },
+  {
+    "id": 618426,
+    "name": "Chisinau",
+    "country": "MD",
+    "region": "Europe",
+    "coord": {
+      "lon": 28.8575,
+      "lat": 47.005562
+    }
+  },
+  {
+    "id": 2618425,
+    "name": "Copenhagen",
+    "country": "DK",
+    "region": "Europe",    
+    "coord": {
+      "lon": 12.56553,
+      "lat": 55.675941
+    }
+  },
+  {
+    "id": 2964574,
+    "name": "Dublin",
+    "country": "IE",
+    "region": "Europe",
+    "coord": {
+      "lon": -6.26719,
+      "lat": 53.34399
+    }
+  },  
+  {
+    "id": 658225,
+    "name": "Helsinki",
+    "country": "FI",
+    "region": "Europe",
+    "coord": {
+      "lon": 24.93545,
+      "lat": 60.169521
+    }
+  },  
+  {
+    "id": 703448,
+    "name": "Kiev",
+    "country": "UA",
+    "region": "Europe",    
+    "coord": {
+      "lon": 30.516666,
+      "lat": 50.433334
+    }
+  },
+  {
+    "id": 6458923,
+    "name": "Lisbon",
+    "country": "PT",
+    "region": "Europe",
+    "coord": {
+      "lon": -9.14843,
+      "lat": 38.726349
+    }
+  },    
+  {
+    "id": 2643743,
+    "name": "London",
+    "country": "GB",
+    "region": "Europe",
+    "coord": {
+      "lon": -0.12574,
+      "lat": 51.50853
+    }
+  },
+  {
+    "id": 2960316,
+    "name": "Luxembourg",
+    "country": "LU",
+    "region": "Europe",
+    "coord": {
+      "lon": 6.13,
+      "lat": 49.611671
+    }
+  },  
+  {
+    "id": 6359304,
+    "name": "Madrid",
+    "country": "ES",
+    "region": "Europe",    
+    "coord": {
+      "lon": -3.68275,
+      "lat": 40.489349
+    }
+  },
+  {
+    "id": 625144,
+    "name": "Minsk",
+    "country": "BY",
+    "region": "Europe",
+    "coord": {
+      "lon": 27.566668,
+      "lat": 53.900002
+    }
+  }, 
+  {
+    "id": 2993458,
+    "name": "Monaco",
+    "country": "MC",
+    "region": "Europe",
+    "coord": {
+      "lon": 7.41667,
+      "lat": 43.73333
+    }
+  },   
+  {
+    "id": 524901,
+    "name": "Moscow",
+    "country": "RU",
+    "region": "Europe",    
+    "coord": {
+      "lon": 37.615555,
+      "lat": 55.75222
+    }
+  },
+  {
+    "id": 6453366,
+    "name": "Oslo",
+    "country": "NO",
+    "region": "Europe",    
+    "coord": {
+      "lon": 10.73367,
+      "lat": 59.911831
+    }
+  },
+  {
+    "id": 6455259,
+    "name": "Paris",
+    "country": "FR",
+    "region": "Europe",    
+    "coord": {
+      "lon": 2.35236,
+      "lat": 48.856461
+    }
+  },
+  {
+    "id": 3193044,
+    "name": "Podgorica",
+    "country": "ME",
+    "region": "Europe",
+    "coord": {
+      "lon": 19.263611,
+      "lat": 42.441109
+    }
+  },  
+  {
+    "id": 3067696,
+    "name": "Prague",
+    "country": "CZ",
+    "region": "Europe",    
+    "coord": {
+      "lon": 14.42076,
+      "lat": 50.088039
+    }
+  },
+  {
+    "id": 3168070,
+    "name": "San Marino",
+    "country": "SM",
+    "region": "Europe",
+    "coord": {
+      "lon": 12.45,
+      "lat": 43.933331
+    }
+  },  
+  {
+    "id": 3191281,
+    "name": "Sarajevo",
+    "country": "BA",
+    "region": "Europe",
+    "coord": {
+      "lon": 18.35644,
+      "lat": 43.84864
+    }
+  },  
+  {
+    "id": 727011,
+    "name": "Sofia",
+    "country": "BG",
+    "region": "Europe",
+    "coord": {
+      "lon": 23.32415,
+      "lat": 42.69751
+    }
+  },  
+  {
+    "id": 2673730,
+    "name": "Stockholm",
+    "country": "SE",
+    "region": "Europe",    
+    "coord": {
+      "lon": 18.064899,
+      "lat": 59.332581
+    }
+  },
+  {
+    "id": 6692263,
+    "name": "Reykjavik",
+    "country": "IS",
+    "region": "Europe",
+    "coord": {
+      "lon": -21.85799,
+      "lat": 64.118401
+    }
+  },  
+  {
+    "id": 456172,
+    "name": "Riga",
+    "country": "LV",
+    "region": "Europe",
+    "coord": {
+      "lon": 24.1,
+      "lat": 56.950001
+    }
+  },  
+  {
+    "id": 3169070,
+    "name": "Roma",
+    "country": "IT",
+    "region": "Europe",
+    "coord": {
+      "lon": 12.4839,
+      "lat": 41.894741
+    }
+  },
+  {
+    "id": 588409,
+    "name": "Tallinn",
+    "country": "EE",
+    "region": "Europe",
+    "coord": {
+      "lon": 24.753531,
+      "lat": 59.436958
+    }
+  },  
+  {
+    "id": 3183875,
+    "name": "Tirana",
+    "country": "AL",
+    "region": "Europe",
+    "coord": {
+      "lon": 19.81889,
+      "lat": 41.327499
+    }
+  },
+  {
+    "id": 3042030,
+    "name": "Vaduz",
+    "country": "LI",
+    "region": "Europe",
+    "coord": {
+      "lon": 9.52154,
+      "lat": 47.14151
+    }
+  },  
+  {
+    "id": 2562305,
+    "name": "Valletta",
+    "country": "MT",
+    "region": "Europe",
+    "coord": {
+      "lon": 14.51472,
+      "lat": 35.899719
+    }
+  },    
+  {
+    "id": 2761369,
+    "name": "Vienna",
+    "country": "AT",
+    "region": "Europe",    
+    "coord": {
+      "lon": 16.37208,
+      "lat": 48.208488
+    }
+  },
+  {
+    "id": 756135,
+    "name": "Warsaw",
+    "country": "PL",
+    "region": "Europe",
+    "coord": {
+      "lon": 21.01178,
+      "lat": 52.229771
+    }
+  },
+  {
+    "id": 3186886,
+    "name": "Zagreb",
+    "country": "HR",
+    "region": "Europe",
+    "coord": {
+      "lon": 15.97798,
+      "lat": 45.814442
+    }
+  },
+  {
+    "id": 4076784,
+    "name": "Montgomery",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -86.299973,
+      "lat": 32.36681
+    }
+  },
+  {
+    "id": 5554072,
+    "name": "Juneau",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -134.419724,
+      "lat": 58.301941
+    }
+  },
+  {
+    "id": 5308655,
+    "name": "Phoenix",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -112.074043,
+      "lat": 33.44838
+    }
+  },
+  {
+    "id": 4119403,
+    "name": "Little Rock",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -92.289589,
+      "lat": 34.746479
+    }
+  },
+  {
+    "id": 5389489,
+    "name": "Sacramento",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -121.4944,
+      "lat": 38.58157
+    }
+  },
+  {
+    "id": 4463523,
+    "name": "Denver",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -81.0298,
+      "lat": 35.53125
+    }
+  },
+  {
+    "id": 4835797,
+    "name": "Hartford",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -72.685089,
+      "lat": 41.76371
+    }
+  },
+  {
+    "id": 5085520,
+    "name": "Dover",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -70.873672,
+      "lat": 43.197861
+    }
+  },
+  {
+    "id": 4174715,
+    "name": "Tallahassee",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -84.280731,
+      "lat": 30.438259
+    }
+  },
+  {
+    "id": 4180439,
+    "name": "Atlanta",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -84.387978,
+      "lat": 33.749001
+    }
+  },
+  {
+    "id": 5856195,
+    "name": "Honolulu",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -157.858337,
+      "lat": 21.30694
+    }
+  },
+  {
+    "id": 5586437,
+    "name": "Boise",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -116.203453,
+      "lat": 43.613499
+    }
+  },
+  {
+    "id": 4525353,
+    "name": "Springfield",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -83.808823,
+      "lat": 39.924229
+    }
+  },
+  {
+    "id": 4861716,
+    "name": "Indianapolis",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -92.433517,
+      "lat": 41.39695
+    }
+  },
+  {
+    "id": 4853828,
+    "name": "Des Moines",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -93.609108,
+      "lat": 41.60054
+    }
+  },
+  {
+    "id": 4280539,
+    "name": "Topeka",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -95.67804,
+      "lat": 39.048328
+    }
+  },
+  {
+    "id": 4292188,
+    "name": "Frankfort",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -84.873283,
+      "lat": 38.200909
+    }
+  },
+  {
+    "id": 4335045,
+    "name": "New Orleans",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -90.075073,
+      "lat": 29.954651
+    }
+  },
+  {
+    "id": 4180531,
+    "name": "Augusta",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -81.974838,
+      "lat": 33.47097
+    }
+  },
+  {
+    "id": 4347242,
+    "name": "Annapolis",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -76.49218,
+      "lat": 38.978451
+    }
+  },
+  {
+    "id": 4317656,
+    "name": "Boston",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -92.055679,
+      "lat": 29.883261
+    }
+  },
+  {
+    "id": 5123993,
+    "name": "Lansing",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -76.479942,
+      "lat": 42.484241
+    }
+  },
+  {
+    "id": 5037649,
+    "name": "Minneapolis",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -93.26384,
+      "lat": 44.979969
+    }
+  },
+  {
+    "id": 4241691,
+    "name": "Jackson",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -87.650299,
+      "lat": 38.721161
+    }
+  },
+  {
+    "id": 4273837,
+    "name": "Kansas City",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -94.627457,
+      "lat": 39.11417
+    }
+  },
+  {
+    "id": 4066811,
+    "name": "Helena",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -86.843597,
+      "lat": 33.296219
+    }
+  },
+  {
+    "id": 5072006,
+    "name": "Lincoln",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -96.666962,
+      "lat": 40.799999
+    }
+  },
+  {
+    "id": 5506956,
+    "name": "Las Vegas",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -115.137222,
+      "lat": 36.174969
+    }
+  },
+  {
+    "id": 4461579,
+    "name": "Concord",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -82.322632,
+      "lat": 35.879841
+    }
+  },
+  {
+    "id": 4251413,
+    "name": "Trenton",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -89.682037,
+      "lat": 38.605598
+    }
+  },
+  {
+    "id": 5490263,
+    "name": "Santa Fe",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -105.937798,
+      "lat": 35.686981
+    }
+  },
+  {
+    "id": 5128638,
+    "name": "New York",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -75.499901,
+      "lat": 43.000351
+    }
+  },
+  {
+    "id": 4460243,
+    "name": "Charlotte",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -80.843132,
+      "lat": 35.227089
+    }
+  },
+  {
+    "id": 5688025,
+    "name": "Bismarck",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -100.783737,
+      "lat": 46.808331
+    }
+  },
+  {
+    "id": 4256038,
+    "name": "Columbus",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -85.921379,
+      "lat": 39.201439
+    }
+  },
+  {
+    "id": 4544379,
+    "name": "Oklahoma",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -97.503281,
+      "lat": 35.492088
+    }
+  },
+  {
+    "id": 4720131,
+    "name": "Portland",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -97.323883,
+      "lat": 27.877251
+    }
+  },
+  {
+    "id": 4560349,
+    "name": "Philadelphia",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -75.163788,
+      "lat": 39.952339
+    }
+  },
+  {
+    "id": 4263408,
+    "name": "Providence",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -86.176659,
+      "lat": 39.490879
+    }
+  },
+  {
+    "id": 4235668,
+    "name": "Charleston",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -88.176147,
+      "lat": 39.496151
+    }
+  },
+  {
+    "id": 5767918,
+    "name": "Pierre",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -100.350967,
+      "lat": 44.36832
+    }
+  },
+  {
+    "id": 5003243,
+    "name": "Nashville",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -85.093048,
+      "lat": 42.60281
+    }
+  },
+  {
+    "id": 4699066,
+    "name": "Houston",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -95.363274,
+      "lat": 29.763281
+    }
+  },
+  {
+    "id": 5780993,
+    "name": "Salt Lake City",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -111.891052,
+      "lat": 40.76078
+    }
+  },
+  {
+    "id": 4849826,
+    "name": "Burlington",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -91.112923,
+      "lat": 40.807541
+    }
+  },
+  {
+    "id": 4791259,
+    "name": "Virginia Beach",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -75.977982,
+      "lat": 36.852928
+    }
+  },
+  {
+    "id": 5809844,
+    "name": "Seattle",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -122.332069,
+      "lat": 47.606209
+    }
+  },
+  {
+    "id": 4235668,
+    "name": "Charleston",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -88.176147,
+      "lat": 39.496151
+    }
+  },
+  {
+    "id": 5263045,
+    "name": "Milwaukee",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -87.906471,
+      "lat": 43.038898
+    }
+  },
+  {
+    "id": 5821086,
+    "name": "Cheyenne",
+    "country": "US",
+    "region": "North America",
+    "coord": {
+      "lon": -104.820251,
+      "lat": 41.13998
+    }
+  }, 
+  {
+    "id": 3996063,
+    "name": "Mexico",
+    "country": "MX",
+    "region": "North America",    
+    "coord": {
+      "lon": -102,
+      "lat": 23
+    }
+  },
+  {
+    "id": 3582672,
+    "name": "Belmopan",
+    "country": "BZ",
+    "region": "Central America",
+    "coord": {
+      "lon": -88.76667,
+      "lat": 17.25
+    }
+  },
+  {
+    "id": 3621849,
+    "name": "San Jose",
+    "country": "CR",
+    "region": "Central America",
+    "coord": {
+      "lon": -84.083328,
+      "lat": 9.93333
+    }
+  },
+  {
+    "id": 3583361,
+    "name": "San Salvador",
+    "country": "SV",
+    "region": "Central America",
+    "coord": {
+      "lon": -89.18718,
+      "lat": 13.68935
+    }
+  },
+  {
+    "id": 3598132,
+    "name": "Guatemala City",
+    "country": "GT",
+    "region": "Central America",
+    "coord": {
+      "lon": -90.513268,
+      "lat": 14.64072
+    }
+  },
+  {
+    "id": 3600949,
+    "name": "Tegucigalpa",
+    "country": "HN",
+    "region": "Central America",
+    "coord": {
+      "lon": -87.20681,
+      "lat": 14.0818
+    }
+  },
+  {
+    "id": 3617763,
+    "name": "Managua",
+    "country": "NI",
+    "region": "Central America",
+    "coord": {
+      "lon": -86.250397,
+      "lat": 12.13282
+    }
+  },
+  {
+    "id": 3703443,
+    "name": "Panama",
+    "country": "PA",
+    "region": "Central America",
+    "coord": {
+      "lon": -79.51973,
+      "lat": 8.9936
+    }
+  }, 
+  {
+    "id": 3469058,
+    "name": "Brasilia",
+    "country": "BR",
+    "region": "South America",
+    "coord": {
+      "lon": -47.929722,
+      "lat": -15.77972
+    }
+  },
+  {
+    "id": 3688689,
+    "name": "Bogota",
+    "country": "CO",
+    "region": "South America",
+    "coord": {
+      "lon": -74.081749,
+      "lat": 4.60971
+    }
+  },
+  {
+    "id": 3435910,
+    "name": "Buenos Aires",
+    "country": "AR",
+    "region": "South America",
+    "coord": {
+      "lon": -58.377232,
+      "lat": -34.613152
+    }
+  },
+  {
+    "id": 3936456,
+    "name": "Lima",
+    "country": "PE",
+    "region": "South America",
+    "coord": {
+      "lon": -77.028236,
+      "lat": -12.04318
+    }
+  },
+  {
+    "id": 3646738,
+    "name": "Caracas",
+    "country": "VE",
+    "region": "South America",
+    "coord": {
+      "lon": -66.879189,
+      "lat": 10.48801
+    }
+  },
+  {
+    "id": 3871336,
+    "name": "Santiago",
+    "country": "CL",
+    "region": "South America",
+    "coord": {
+      "lon": -70.64827,
+      "lat": -33.45694
+    }
+  },
+  {
+    "id": 3652462,
+    "name": "Quito",
+    "country": "EC",
+    "region": "South America",
+    "coord": {
+      "lon": -78.524948,
+      "lat": -0.22985
+    }
+  },
+  {
+    "id": 3903987,
+    "name": "Sucre",
+    "country": "BO",
+    "region": "South America",
+    "coord": {
+      "lon": -65.262741,
+      "lat": -19.033319
+    }
+  },
+  {
+    "id": 3439389,
+    "name": "Asuncion",
+    "country": "PY",
+    "region": "South America",
+    "coord": {
+      "lon": -57.63591,
+      "lat": -25.300659
+    }
+  },
+  {
+    "id": 3441575,
+    "name": "Montevideo",
+    "country": "UY",
+    "region": "South America",
+    "coord": {
+      "lon": -56.167351,
+      "lat": -34.833462
+    }
+  },
+  {
+    "id": 3378644,
+    "name": "Georgetown",
+    "country": "GY",
+    "region": "South America",
+    "coord": {
+      "lon": -58.15527,
+      "lat": 6.80448
+    }
+  },
+  {
+    "id": 3383330,
+    "name": "Paramaribo",
+    "country": "SR",
+    "region": "South America",
+    "coord": {
+      "lon": -55.166821,
+      "lat": 5.86638
+    }
+  },
+  {
+    "id": 6690689,
+    "name": "Cayenne",
+    "country": "GF",
+    "region": "South America",
+    "coord": {
+      "lon": -52.334999,
+      "lat": 4.9386
+    }
+  },
+  {
+    "id": 3426691,
+    "name": "Stanley",
+    "country": "FK",
+    "region": "South America",
+    "coord": {
+      "lon": -57.849998,
+      "lat": -51.700001
+    }
+  },
+  {
+    "id": 2147714,
+    "name": "Sydney",
+    "country": "AU",
+    "region": "Australia",    
+    "coord": {
+      "lon": 151.207321,
+      "lat": -33.867851
+    }
+  },
+  {
+    "id": 7839562,
+    "name": "Brisbane",
+    "country": "AU",
+    "region": "Australia", 
+    "coord": {
+      "lon": 153.029938,
+      "lat": -27.44573
+    }
+  },
+  {
+    "id": 2158177,
+    "name": "Melbourne",
+    "country": "AU",
+    "region": "Australia", 
+    "coord": {
+      "lon": 144.963318,
+      "lat": -37.813999
+    }
+  },
+  {
+    "id": 2153391,
+    "name": "Perth",
+    "country": "AU",
+    "region": "Australia", 
+    "coord": {
+      "lon": 147.166672,
+      "lat": -41.566669
+    }
+  },
+  {
+    "id": 1261481,
+    "name": "New Delhi",
+    "country": "IN",
+    "region": "Asia",
+    "coord": {
+      "lon": 77.23114,
+      "lat": 28.61282
+    }
+  },
+  {
+    "id": 1248991,
+    "name": "Colombo",
+    "country": "LK",
+    "region": "Asia",
+    "coord": {
+      "lon": 79.847778,
+      "lat": 6.93194
+    }
+  },
+  {
+    "id": 112931,
+    "name": "Tehran",
+    "country": "IR",
+    "region": "Asia",
+    "coord": {
+      "lon": 51.421509,
+      "lat": 35.694389
+    }
+  },
+  {
+    "id": 1816670,
+    "name": "Beijing",
+    "country": "CN",
+    "region": "Asia",
+    "coord": {
+      "lon": 116.397232,
+      "lat": 39.907501
+    }
+  },
+  {
+    "id": 98182,
+    "name": "Baghdad",
+    "country": "IQ",
+    "region": "Asia",
+    "coord": {
+      "lon": 44.400879,
+      "lat": 33.34058
+    }
+  },
+  {
+    "id": 1850147,
+    "name": "Tokyo",
+    "country": "JP",
+    "region": "Asia",
+    "coord": {
+      "lon": 139.691711,
+      "lat": 35.689499
+    }
+  },
+  {
+    "id": 1176615,
+    "name": "Islamabad",
+    "country": "PK",
+    "region": "Asia",
+    "coord": {
+      "lon": 73.043289,
+      "lat": 33.721481
+    }
+  },
+  {
+    "id": 281184,
+    "name": "Jerusalem",
+    "country": "IL",
+    "region": "Asia",
+    "coord": {
+      "lon": 35.216331,
+      "lat": 31.769039
+    }
+  },
+  {
+    "id": 1835848,
+    "name": "Seoul",
+    "country": "KR",
+    "region": "Asia",
+    "coord": {
+      "lon": 126.977829,
+      "lat": 37.56826
+    }
+  },
+  {
+    "id": 1185241,
+    "name": "Dhaka",
+    "country": "BD",
+    "region": "Asia",
+    "coord": {
+      "lon": 90.40744,
+      "lat": 23.7104
+    }
+  },
+  {
+    "id": 1609350,
+    "name": "Bangkok",
+    "country": "TH",
+    "region": "Asia",
+    "coord": {
+      "lon": 100.51667,
+      "lat": 13.75
+    }
+  },
+  {
+    "id": 2158874,
+    "name": "Manilla",
+    "country": "AU",
+    "region": "Asia",
+    "coord": {
+      "lon": 150.716675,
+      "lat": -30.75
+    }
+  },
+  {
+    "id": 170654,
+    "name": "Damascus",
+    "country": "SY",
+    "region": "Asia",
+    "coord": {
+      "lon": 36.291279,
+      "lat": 33.510201
+    }
+  },
+  {
+    "id": 108410,
+    "name": "Riyadh",
+    "country": "SA",
+    "region": "Asia",
+    "coord": {
+      "lon": 46.721851,
+      "lat": 24.687731
+    }
+  },
+  {
+    "id": 290030,
+    "name": "Doha",
+    "country": "QA",
+    "region": "Asia",
+    "coord": {
+      "lon": 51.533333,
+      "lat": 25.286667
+    }
+  },
+  {
+    "id": 1642911,
+    "name": "Jakarta",
+    "country": "ID",
+    "region": "Asia",
+    "coord": {
+      "lon": 106.845131,
+      "lat": -6.21462
+    }
+  },
+  {
+    "id": 1733046,
+    "name": "Kuala Lumpur",
+    "country": "MY",
+    "region": "Asia",
+    "coord": {
+      "lon": 101.686531,
+      "lat": 3.14309
+    }
+  },
+  {
+    "id": 1668341,
+    "name": "Taipei",
+    "country": "TW",
+    "region": "Asia",
+    "coord": {
+      "lon": 121.531853,
+      "lat": 25.04776
+    }
+  },
+  {
+    "id": 1138958,
+    "name": "Kabul",
+    "country": "AF",
+    "region": "Asia",
+    "coord": {
+      "lon": 69.172333,
+      "lat": 34.52813
+    }
+  },
+  {
+    "id": 292968,
+    "name": "Abu Dhabi",
+    "country": "AE",
+    "region": "Asia",
+    "coord": {
+      "lon": 54.366669,
+      "lat": 24.466669
+    }
+  },
+  {
+    "id": 2507480,
+    "name": "Algiers",
+    "country": "DZ",
+    "region": "Africa",
+    "coord": {
+      "lon": 3.04197,
+      "lat": 36.752499
+    }
+  },
+  {
+    "id": 2538474,
+    "name": "Rabat",
+    "country": "MA",
+    "region": "Africa",
+    "coord": {
+      "lon": -6.84006,
+      "lat": 33.991112
+    }
+  },
+  {
+    "id": 266826,
+    "name": "Tripoli",
+    "country": "LB",
+    "region": "Africa",
+    "coord": {
+      "lon": 35.84972,
+      "lat": 34.436668
+    }
+  },
+  {
+    "id": 964137,
+    "name": "Pretoria",
+    "country": "ZA",
+    "region": "Africa",
+    "coord": {
+      "lon": 28.18783,
+      "lat": -25.74486
+    }
+  },
+  {
+    "id": 3369157,
+    "name": "Cape Town",
+    "country": "ZA",
+    "region": "Africa",
+    "coord": {
+      "lon": 18.42322,
+      "lat": -33.925838
+    }
+  },
+  {
+    "id": 2464470,
+    "name": "Tunis",
+    "country": "TN",
+    "region": "Africa",
+    "coord": {
+      "lon": 10.16579,
+      "lat": 36.81897
+    }
+  },
+  {
+    "id": 2352778,
+    "name": "Abuja",
+    "country": "NG",
+    "region": "Africa",
+    "coord": {
+      "lon": 7.48976,
+      "lat": 9.05735
+    }
+  },
+  {
+    "id": 1070940,
+    "name": "Antananarivo",
+    "country": "MG",
+    "region": "Africa",
+    "coord": {
+      "lon": 47.536129,
+      "lat": -18.913679
+    }
+  },
+  {
+    "id": 2460596,
+    "name": "Bamako",
+    "country": "ML",
+    "region": "Africa",
+    "coord": {
+      "lon": -8,
+      "lat": 12.65
+    }
+  },
+  {
+    "id": 184745,
+    "name": "Nairobi",
+    "country": "KE",
+    "region": "Africa",
+    "coord": {
+      "lon": 36.816669,
+      "lat": -1.28333
+    }
+  }, 
+  {
+    "id": 160196,
+    "name": "Dodoma",
+    "country": "TZ",
+    "region": "Africa",
+    "coord": {
+      "lon": 35.739471,
+      "lat": -6.17221
+    }
+  },
+  {
+    "id": 2220957,
+    "name": "Yaounde",
+    "country": "CM",
+    "region": "Africa",
+    "coord": {
+      "lon": 11.51667,
+      "lat": 3.86667
+    }
+  },
+  {
+    "id": 232422,
+    "name": "Kampala",
+    "country": "UG",
+    "region": "Africa",
+    "coord": {
+      "lon": 32.582191,
+      "lat": 0.31628
+    }
+  }, 
+  {
+    "id": 53654,
+    "name": "Mogadishu",
+    "country": "SO",
+    "region": "Africa",
+    "coord": {
+      "lon": 45.34375,
+      "lat": 2.03711
+    }
+  },
+  {
+    "id": 2253354,
+    "name": "Dakar",
+    "country": "SN",
+    "region": "Africa",
+    "coord": {
+      "lon": -17.444059,
+      "lat": 14.6937
+    }
+  },
+  {
+    "id": 890299,
+    "name": "Harare",
+    "country": "ZW",
+    "region": "Africa",
+    "coord": {
+      "lon": 31.05389,
+      "lat": -17.82935
+    }
+  },
+  {
+    "id": 3352136,
+    "name": "Windhoek",
+    "country": "NA",
+    "region": "Africa",
+    "coord": {
+      "lon": 17.083229,
+      "lat": -22.55941
+    }
+  },
+  {
+    "id": 2274895,
+    "name": "Monrovia",
+    "country": "LR",
+    "region": "Africa",
+    "coord": {
+      "lon": -10.7969,
+      "lat": 6.30054
+    }
+  }, 
+  {
+    "id": 909137,
+    "name": "Lusaka",
+    "country": "ZM",
+    "region": "Africa",
+    "coord": {
+      "lon": 28.28713,
+      "lat": -15.40669
+    }
+  }, 
+  {
+    "id": 373303,
+    "name": "Juba",
+    "country": "SS",
+    "region": "Africa",
+    "coord": {
+      "lon": 31.58247,
+      "lat": 4.85165
+    }
+  }                                                                                                                                                                                                                                                            
+]

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Weather App</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="weather, forecast, today, sunny, cloudy, rainy">
+	<meta name="description" content="Access current weather data for any location on Earth. 
+		Current weather is frequently updated based on global models and data from more than 40,000 weather stations. 
+		Data is available in JSON, XML, or HTML format">
+	<meta name="author" content="cristian.ro">
+	<meta name="domain" content="cristian.ro">
+	
+	<!-- styles -->
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div id="toast"></div>
+	
+	<section class="header">
+		<h2>Today's weather</h2>
+	</section>
+	
+	<section class="nav">
+	    <a href="#" onclick="return doCityClick(this, event, '2759794')">Amsterdam</a>
+	    <a href="#" onclick="return doCityClick(this, event, '2950159')">Berlin</a>
+	    <a href="#" onclick="return doCityClick(this, event, '2800866')">Brussels</a>
+	    <a href="#" onclick="return doCityClick(this, event, '683506')">Bucharest</a>
+	    <a href="#" onclick="return doCityClick(this, event, '2618425')">Copenhagen</a>
+	    <a href="#" onclick="return doCityClick(this, event, '2172797')">London</a>
+	    <a href="#" onclick="return doCityClick(this, event, '3117732')">Madrid</a>
+	    <a href="#" onclick="return doCityClick(this, event, '524901')">Moscow</a>
+	    <a href="#" onclick="return doCityClick(this, event, '6453366')">Oslo</a>
+	    <a href="#" onclick="return doCityClick(this, event, '2988507')">Paris</a>
+	    <a href="#" onclick="return doCityClick(this, event, '3067696')">Prague</a>
+	    <a href="#" onclick="return doCityClick(this, event, '2673730')">Stockholm</a>
+	    <a href="#" onclick="return doCityClick(this, event, '3169070')">Rome</a>
+	    <a href="#" onclick="return doCityClick(this, event, '2761369')">Vienna</a>
+	</section>
+	
+	<section class="content">
+		<div class="col-1">
+			<!-- search -->
+			<h3>Search</h3>
+			
+			<div class="input-container">
+				<i class="fa fa-map-marker input-icon" onclick="getPosition()"></i>
+				<input id="cityName" class="input-field" type="text" placeholder="Location/City" value="" min="3" onkeypress=" return doCitySearch(this, event)"/>
+			</div>
+	
+			<!-- country list -->
+			<ul id="regionList" class="listLevel1">
+				<li onclick="toggleRegion(this)">Europe
+					<ul id="europeList" class="listLevel2"></ul>
+				</li>
+				<li onclick="toggleRegion(this)">North America
+					<ul id="northAmericaList" class="listLevel2"></ul>
+				</li>
+				<li onclick="toggleRegion(this)">Central America
+					<ul id="centralAmericaList" class="listLevel2"></ul>
+				</li>
+				<li onclick="toggleRegion(this)">South America
+					<ul id="southAmericaList" class="listLevel2"></ul>
+				</li>
+				<li onclick="toggleRegion(this)">Australia
+					<ul id="australiaList" class="listLevel2"></ul>
+				</li>
+				<li onclick="toggleRegion(this)">Asia
+					<ul id="asiaList" class="listLevel2"></ul>
+				</li>
+				<li onclick="toggleRegion(this)">Africa
+					<ul id="africaList" class="listLevel2"></ul>
+				</li>
+			</ul> 
+		</div>
+		<div class="col-2">		
+			<div id="weatherInfo" style="float: left; width:100%">
+				<img id="forecastIcon" src="https://openweathermap.org/img/wn/03d@2x.png" alt="weather" width="60" height="60">
+				<h3 id="forecastCity" style="margin: 0px 0px 10px 0px;"></h3>
+				<p id="forecastDetails" style="color: black; font-size: 16px;"></p>
+			</div>
+			
+			<div id="geoLocation" style="float: left; width: 100%; height: 400px;">
+			</div>
+		</div>
+	</section>	
+	
+	<section class="footer">
+	  <h3>&copy; Cristian Corporation</h3>
+	</section>
+	
+	<!-- scripts -->
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="weatherAPI.js"></script>
+  	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=getPosition" async defer></script>
+</body>
+</html>

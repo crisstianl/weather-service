@@ -1,0 +1,230 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.header, .nav, .content, .footer {
+		width: 100%;
+	}	
+	.content .col-1, .content .col-2 {
+		width: 100%;
+	}
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	.header, .nav, .content, .footer {
+		width: 100%;
+	}	
+	.content .col-1, .content .col-2 {
+		width: 100%;
+	}
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+	.header, .nav, .content, .footer {
+		width: 100%;
+	}
+	.content .col-1 {
+		width: 30%;
+		min-height: 600px;
+	}
+	.content .col-2 {
+		width: 70%;
+		min-height: 600px;
+	}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.header, .nav, .content, .footer {
+		width: 100%;
+	}
+	.content .col-1 {
+		width: 25%;
+		min-height: 600px;
+	}
+	.content .col-2 {
+		width: 75%;
+		min-height: 600px;
+	}	
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.header, .nav, .content, .footer {
+		width: 100%;
+	}	
+	.content .col-1 {
+		width: 20%;
+		min-height: 800px;
+	}
+	.content .col-2 {
+		width: 80%;
+		min-height: 800px;
+	}
+}
+
+body {
+	display: table;
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	padding: 30px;
+}
+
+.header {
+	display: table-row;
+	background-color: #f1f1f1;
+  	text-align: center;
+  	line-height: 130px;
+  	height: 130px;
+}
+
+.nav {
+  	overflow: hidden;
+  	background-color: #333;
+}
+
+.nav a {
+  	float: left;
+  	display: block;
+  	color: #f2f2f2;
+  	text-align: center;
+  	padding: 14px 16px;
+  	text-decoration: none;
+}
+
+.nav a:hover {
+  	background-color: #ddd;
+  	color: #DB4D2E;
+  	font-weight: bold;
+  	border-bottom: 3px solid white;
+}
+
+.content {
+	display: table-row;
+	box-sizing: border-box;
+}
+
+.content .col-1 {
+	float: left;
+	background-color: #f1f1f1;
+	box-sizing: border-box;
+	padding: 10px 10px 10px 20px;
+}
+
+.content .col-1 .listLevel1 {
+	list-style-type: square;
+  	overflow: hidden;
+  	padding-left: 20px;
+}
+
+.content .col-1 .listLevel1 li:hover {
+	cursor: pointer;
+}
+
+.content .col-1 .listLevel2 {
+	display: none;
+	list-style-type: square;
+	padding-left: 20px;
+}
+
+.content .col-1 .listLevel2 li:hover {
+	cursor: pointer;
+	color: #DB4D2E;
+	font-weight: bold;
+	text-decoration: underline;
+}
+	
+.content .col-2 {
+	float: left;
+	background-color: white;
+	box-sizing: border-box;
+	padding: 10px 10px 10px 20px;	
+}
+
+.content:after {
+	clear: both;
+}
+
+.footer {
+	display: table-row;
+	background-color: #f1f1f1;
+  	text-align: center;
+  	line-height: 130px;
+  	height: 130px;	
+}
+
+h2, h3 {
+	color: #DB4D2E;
+}
+
+.input-container {
+	display: flex;
+	width: 100%;
+}
+
+.input-icon {
+	padding: 10px;
+	background: #708090;
+	color: white;
+	min-width: 30px;
+	text-align: center;
+}
+
+.input-icon:hover {
+	cursor: pointer;
+}
+
+.input-field {
+	width: 100%;
+	outline: none;
+	font-size: 16px;
+}
+
+.input-field:focus {
+	border: 2px solid #708090;
+}
+
+#toast {
+	visibility: hidden; /* Hidden by default. Visible on click */
+	min-width: 250px; /* Set a default minimum width */
+	margin-left: -125px; /* Divide value of min-width by 2 */
+	background-color: #333; /* Black background color */
+	color: #fff; /* White text color */
+	text-align: center; /* Centered text */
+	border-radius: 2px; /* Rounded borders */
+	padding: 16px; /* Padding */
+	position: fixed; /* Sit on top of the screen */
+	z-index: 1; /* Add a z-index if needed */
+	left: 50%; /* Center the snackbar */
+	bottom: 30px; /* 30px from the bottom */
+}
+
+#toast.show {
+	visibility: visible; /* Show the snackbar */
+	/* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+	However, delay the fade out process for 2.5 seconds */
+	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the toast in and out */
+@-webkit-keyframes fadein {
+	from {bottom: 0; opacity: 0;} 
+	to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+	from {bottom: 0; opacity: 0;}
+	to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+	from {bottom: 30px; opacity: 1;} 
+	to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+	from {bottom: 30px; opacity: 1;}
+	to {bottom: 0; opacity: 0;}
+}
