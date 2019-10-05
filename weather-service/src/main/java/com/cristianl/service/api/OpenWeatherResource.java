@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
@@ -16,9 +17,23 @@ import org.springframework.web.server.ResponseStatusException;
 @Component
 public class OpenWeatherResource {
 
-	private static final String API_KEY = "b6446fead4c9dbccd049cd8acc07f2db";
-	private static final String API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather";
-	// private static final String API_ENDPOINT = "http://localhost:56789/weather";
+	@Value("${openweathermap.api-key}")
+	private String apiKey;
+
+	@Value("${openweathermap.api-url}")
+	private String apiUrl;
+
+	public OpenWeatherResource() {
+		super();
+	}
+
+	/**
+	 * Visible for testing
+	 */
+	OpenWeatherResource(final String apiKey, final String apiUrl) {
+		this.apiKey = apiKey;
+		this.apiUrl = apiUrl;
+	}
 
 	public String getWeather(final Integer cityId, final String cityName, final String zipcode)
 			throws ResponseStatusException {
@@ -33,19 +48,25 @@ public class OpenWeatherResource {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
 					"You must specify either the city id, city name or zipcode");
 		}
-		return get(urlParams);
+		return get(this.apiUrl, urlParams, this.apiKey);
 	}
 
 	public String getWeather(final String lat, final String lon) throws ResponseStatusException {
 		final String urlParams = "?lat=" + lat + "&lon=" + lon;
-		return get(urlParams);
+		return get(this.apiUrl, urlParams, this.apiKey);
 	}
 
-	private static String get(final String urlParams) throws ResponseStatusException {
+	public String addWeather(final String cityId, final String weatherId) throws ResponseStatusException {
+		final String formParams = String.format("id=%s&weather=%s", cityId, weatherId);
+		return post(this.apiUrl, formParams, this.apiKey);
+	}
+
+	private static String get(final String apiUrl, final String urlParams, final String apiKey)
+			throws ResponseStatusException {
 		HttpURLConnection conn = null;
 		try {
 			// open connection
-			final URL endpoint = new URL(API_ENDPOINT + urlParams + "&units=metric&APPID=" + API_KEY);
+			final URL endpoint = new URL(apiUrl + urlParams + "&units=metric&APPID=" + apiKey);
 			conn = (HttpURLConnection) endpoint.openConnection();
 
 			// set headers
@@ -72,12 +93,13 @@ public class OpenWeatherResource {
 		}
 	}
 
-	private static String post(final String formParams) throws MalformedURLException, IOException {
+	private static String post(final String apiUrl, final String formParams, final String apiKey)
+			throws ResponseStatusException {
 		HttpURLConnection conn = null;
 		try {
 			// open connection
-			final URL endpoint = new URL(API_ENDPOINT + "?units=metric&APPID=" + API_KEY);
-			conn = (HttpURLConnection) endpoint.openConnection();
+			final URL endpointURL = new URL(apiUrl + "?units=metric&APPID=" + apiKey);
+			conn = (HttpURLConnection) endpointURL.openConnection();
 
 			// set headers
 			conn.setRequestMethod("POST");
@@ -100,6 +122,10 @@ public class OpenWeatherResource {
 
 			// process response
 			return toString(conn.getInputStream());
+		} catch (MalformedURLException e) {
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+		} catch (IOException e) {
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
 		} finally {
 			if (conn != null) {
 				conn.disconnect();

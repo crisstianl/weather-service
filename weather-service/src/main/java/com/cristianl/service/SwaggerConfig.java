@@ -15,10 +15,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-	private static final Contact API_CONTACT = new Contact("Cristian", "http://localhost:8080", "cristian@gmail.com");
+	private static final Contact API_CONTACT = new Contact("Cristian",
+			"http://localhost:8080/weather-service/v2/api-docs", "cristian@gmail.com");
 
 	private static final ApiInfo API_INFO = new ApiInfo("Weather service",
-			"Weather service helps you pick your umbrella during rains and sunscream during scorching afternoons",
+			"Weather service helps you pick your umbrella during rains and sunscream during scorching afternoons.",
 			"1.0", "urn:tos", API_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0");
 
 	private static final HashSet<String> API_PRODUCES = new HashSet<String>(2);

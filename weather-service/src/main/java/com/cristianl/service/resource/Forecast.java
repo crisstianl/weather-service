@@ -93,13 +93,13 @@ public class Forecast implements java.io.Serializable {
 	 * Atmospheric pressure at sea level or ground level in hPa
 	 */
 	@JsonProperty("main.pressure")
-	private Integer pressure;
+	private Double pressure;
 
 	/**
 	 * percentage
 	 */
 	@JsonProperty("main.humidity")
-	private Integer humidity;
+	private Double humidity;
 
 	/**
 	 * Maximum temperature at the moment in large cities and megalopolises
@@ -117,13 +117,13 @@ public class Forecast implements java.io.Serializable {
 	 * Atmospheric pressure on the sea level in hPa
 	 */
 	@JsonProperty("main.sea_level")
-	private Integer seaLevelPressure;
+	private Double seaLevelPressure;
 
 	/**
 	 * Atmospheric pressure on the ground level in hPa
 	 */
 	@JsonProperty("main.grnd_level")
-	private Integer groundLevelPressure;
+	private Double groundLevelPressure;
 
 	@JsonProperty("visibility")
 	private Integer visibility;
@@ -188,8 +188,8 @@ public class Forecast implements java.io.Serializable {
 
 	@JsonSetter("coord")
 	public void setCoord(final java.util.Map<String, Object> values) {
-		this.latitude = ((Number) values.get("lat")).doubleValue();
-		this.longitude = ((Number) values.get("lon")).doubleValue();
+		this.latitude = toDouble(values.get("lat"));
+		this.longitude = toDouble(values.get("lon"));
 	}
 
 	@JsonGetter("coord")
@@ -225,13 +225,13 @@ public class Forecast implements java.io.Serializable {
 
 	@JsonSetter("main")
 	public void setMain(final java.util.Map<String, Object> values) {
-		this.temperature = ((Number) values.get("temp")).doubleValue();
-		this.pressure = (Integer) values.get("pressure");
-		this.humidity = (Integer) values.get("humidity");
-		this.tempMin = ((Number) values.get("temp_min")).doubleValue();
-		this.tempMax = ((Number) values.get("temp_max")).doubleValue();
-		this.seaLevelPressure = (Integer) values.get("sea_level");
-		this.groundLevelPressure = (Integer) values.get("brnd_level");
+		this.temperature = toDouble(values.get("temp"));
+		this.pressure = toDouble(values.get("pressure"));
+		this.humidity = toDouble(values.get("humidity"));
+		this.tempMin = toDouble(values.get("temp_min"));
+		this.tempMax = toDouble(values.get("temp_max"));
+		this.seaLevelPressure = toDouble(values.get("sea_level"));
+		this.groundLevelPressure = toDouble(values.get("brnd_level"));
 	}
 
 	@JsonGetter("main")
@@ -261,12 +261,8 @@ public class Forecast implements java.io.Serializable {
 
 	@JsonSetter("wind")
 	public void setWind(final java.util.Map<String, Object> values) {
-		if (values.containsKey("speed")) {
-			this.windSpeed = ((Number) values.get("speed")).doubleValue();
-		}
-		if (values.containsKey("deg")) {
-			this.windDegrees = ((Number) values.get("deg")).doubleValue();
-		}
+		this.windSpeed = toDouble(values.get("speed"));
+		this.windDegrees = toDouble(values.get("deg"));
 	}
 
 	@JsonGetter("wind")
@@ -282,12 +278,8 @@ public class Forecast implements java.io.Serializable {
 
 	@JsonSetter("rain")
 	public void setRain(final java.util.Map<String, Object> values) {
-		if (values.containsKey("1h")) {
-			this.rainVolume1 = ((Number) values.get("1h")).doubleValue();
-		}
-		if (values.containsKey("3h")) {
-			this.rainVolume3 = ((Number) values.get("3h")).doubleValue();
-		}
+		this.rainVolume1 = toDouble(values.get("1h"));
+		this.rainVolume3 = toDouble(values.get("3h"));
 	}
 
 	@JsonGetter("rain")
@@ -303,12 +295,8 @@ public class Forecast implements java.io.Serializable {
 
 	@JsonSetter("snow")
 	public void setSnow(final java.util.Map<String, Object> values) {
-		if (values.containsKey("1h")) {
-			this.snowVolume1 = ((Number) values.get("1h")).doubleValue();
-		}
-		if (values.containsKey("3h")) {
-			this.snowVolume3 = ((Number) values.get("3h")).doubleValue();
-		}
+		this.snowVolume1 = toDouble(values.get("1h"));
+		this.snowVolume3 = toDouble(values.get("3h"));
 	}
 
 	@JsonGetter("snow")
@@ -495,22 +483,22 @@ public class Forecast implements java.io.Serializable {
 	}
 
 	@JsonIgnore
-	public Integer getPressure() {
+	public Double getPressure() {
 		return pressure;
 	}
 
 	@JsonIgnore
-	public void setPressure(Integer pressure) {
+	public void setPressure(Double pressure) {
 		this.pressure = pressure;
 	}
 
 	@JsonIgnore
-	public Integer getHumidity() {
+	public Double getHumidity() {
 		return humidity;
 	}
 
 	@JsonIgnore
-	public void setHumidity(Integer humidity) {
+	public void setHumidity(Double humidity) {
 		this.humidity = humidity;
 	}
 
@@ -535,22 +523,22 @@ public class Forecast implements java.io.Serializable {
 	}
 
 	@JsonIgnore
-	public Integer getSeaLevelPressure() {
+	public Double getSeaLevelPressure() {
 		return seaLevelPressure;
 	}
 
 	@JsonIgnore
-	public void setSeaLevelPressure(Integer seaLevelPressure) {
+	public void setSeaLevelPressure(Double seaLevelPressure) {
 		this.seaLevelPressure = seaLevelPressure;
 	}
 
 	@JsonIgnore
-	public Integer getGroundLevelPressure() {
+	public Double getGroundLevelPressure() {
 		return groundLevelPressure;
 	}
 
 	@JsonIgnore
-	public void setGroundLevelPressure(Integer groundLevelPressure) {
+	public void setGroundLevelPressure(Double groundLevelPressure) {
 		this.groundLevelPressure = groundLevelPressure;
 	}
 
@@ -632,6 +620,18 @@ public class Forecast implements java.io.Serializable {
 	@JsonIgnore
 	public void setSnowVolume3(Double snowVolume3) {
 		this.snowVolume3 = snowVolume3;
+	}
+
+	private static Double toDouble(final Object value) {
+		if (value instanceof Double) {
+			return (Double) value;
+		} else if (value instanceof Number) {
+			return ((Number) value).doubleValue();
+		} else if (value != null) {
+			return Double.valueOf(value.toString());
+		} else {
+			return null;
+		}
 	}
 
 }

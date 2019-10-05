@@ -3,8 +3,6 @@ package com.cristianl.service.resource;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
@@ -17,6 +15,10 @@ public class ForecastDAO {
 
 	@Autowired
 	private OpenWeatherResource resource;
+
+	public ForecastDAO() {
+		super();
+	}
 
 	/**
 	 * Visible for testing
@@ -31,18 +33,11 @@ public class ForecastDAO {
 			final String jsonResp = this.resource.getWeather(cityId, cityName, zipcode);
 			final ObjectMapper mapper = new ObjectMapper();
 			return (Forecast) mapper.readValue(jsonResp, Forecast.class);
-			// return get();
 		} catch (ResponseStatusException e) {
 			throw e;
 		} catch (IOException e) {
 			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
 		}
-	}
-
-	private static Forecast get() throws IOException {
-		final Resource jsonRes = new ClassPathResource("static/London.json");
-		final ObjectMapper mapper = new ObjectMapper();
-		return (Forecast) mapper.readValue(jsonRes.getInputStream(), Forecast.class);
 	}
 
 	public Forecast get(final String lat, final String lon) {
@@ -57,13 +52,12 @@ public class ForecastDAO {
 		}
 	}
 
-	public void upsert(final Forecast newForecast) {
+	public Forecast upsert(final Forecast newForecast) {
+		return newForecast;
 	}
 
-	public Forecast remove(final String city) {
-		Forecast result = new Forecast();
-		result.setCityName(city);
-		return result;
+	public boolean remove(final Forecast forecast) {
+		return forecast != null && (forecast.getCityId() != null || forecast.getCityName() != null);
 	}
 
 }

@@ -32,16 +32,8 @@ public class WeatherServiceException extends Exception {
 		return details;
 	}
 
-	public void setDetails(String details) {
-		this.details = details;
-	}
-
 	public Date getTimestamp() {
 		return timestamp;
-	}
-
-	public void setTimestamp(Date timestamp) {
-		this.timestamp = timestamp;
 	}
 
 }

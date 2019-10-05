@@ -6,6 +6,11 @@ import org.junit.Test;
 public class ServiceUtilsTest {
 
 	@Test
+	public void ctorTest() {
+		Assert.assertNotNull(new ServiceUtils());
+	}
+
+	@Test
 	public void testIsNumber() {
 		Assert.assertTrue(ServiceUtils.isNumeric("12345678"));
 		Assert.assertTrue(ServiceUtils.isNumeric("1234.5678"));

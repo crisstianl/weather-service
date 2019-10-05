@@ -43,6 +43,10 @@ public class ForecastResource {
 	@Autowired
 	private MessageSource messages;
 
+	public ForecastResource() {
+		super();
+	}
+
 	/**
 	 * Visible for testing
 	 */
@@ -55,19 +59,19 @@ public class ForecastResource {
 
 	/* ***GET*** */
 
-	@RequestMapping(method = RequestMethod.GET, path = "/ping")
+	@RequestMapping(method = RequestMethod.GET, path = "/ping", produces = "application/text")
 	public ResponseEntity<String> ping(@RequestHeader(name = "Accept-Language", required = false) Locale locale)
 			throws Exception {
 		final String result = this.messages.getMessage("hello.message", null, locale);
 		return ResponseEntity.ok(result);
 	}
 
-	@GetMapping(path = "/cities/{region}")
+	@GetMapping(path = "/cities/{region}", produces = "application/json")
 	public ResponseEntity<Location[]> doGetAllCities(@PathVariable(required = false) String region) throws Exception {
 		return ResponseEntity.ok(this.locationDAO.getAll(region));
 	}
 
-	@GetMapping(path = "/forecast/{city}")
+	@GetMapping(path = "/forecast/{city}", produces = "application/json")
 	public ResponseEntity<Forecast> doGetByCity(@PathVariable(required = true) String city) throws Exception {
 		Forecast result = null;
 		if (ServiceUtils.isNumeric(city)) {
@@ -84,7 +88,7 @@ public class ForecastResource {
 		throw new WeatherServiceNotFoundException("City not found " + city, null);
 	}
 
-	@GetMapping(path = "/forecast")
+	@GetMapping(path = "/forecast", produces = "application/json")
 	public ResponseEntity<Forecast> doGetByPosition(@RequestParam(required = true) String lat,
 			@RequestParam(required = true) String lon) throws Exception {
 		Forecast result = forecastDAO.get(lat, lon);
@@ -96,8 +100,8 @@ public class ForecastResource {
 
 	/* ***POST*** */
 
-	@PostMapping(path = "/forecast")
-	public ResponseEntity<Forecast> insert(@Valid @RequestBody Forecast newForecast) throws Exception {
+	@PostMapping(path = "/forecast", consumes = "application/json", produces = "application/text")
+	public ResponseEntity<String> insert(@Valid @RequestBody Forecast newForecast) throws Exception {
 		forecastDAO.upsert(newForecast);
 		final URI newAddress = ServletUriComponentsBuilder.fromCurrentRequest().path("/{city}")
 				.buildAndExpand(newForecast.getCityName()).toUri();
@@ -106,8 +110,8 @@ public class ForecastResource {
 
 	/* ***PUT*** */
 
-	@PutMapping(path = "/forecast")
-	public ResponseEntity<Forecast> update(@Valid @RequestBody Forecast newForecast) throws Exception {
+	@PutMapping(path = "/forecast", consumes = "application/json", produces = "application/text")
+	public ResponseEntity<String> update(@Valid @RequestBody Forecast newForecast) throws Exception {
 		forecastDAO.upsert(newForecast);
 		final URI newAddress = ServletUriComponentsBuilder.fromCurrentRequest().path("/{city}")
 				.buildAndExpand(newForecast.getCityName()).toUri();
@@ -116,10 +120,16 @@ public class ForecastResource {
 
 	/* ***DELETE*** */
 
-	@DeleteMapping(path = "/forecast/{city}")
-	public ResponseEntity<Object> remove(@PathVariable @NotNull String city) throws Exception {
-		final Forecast result = forecastDAO.remove(city);
-		if (result == null) {
+	@DeleteMapping(path = "/forecast/{city}", produces = "application/text")
+	public ResponseEntity<String> remove(@PathVariable @NotNull String city) throws Exception {
+		Forecast forecast = new Forecast();
+		if (ServiceUtils.isNumeric(city)) {
+			forecast.setCityId(Integer.valueOf(city));
+		} else {
+			forecast.setCityName(city);
+		}
+
+		if (!forecastDAO.remove(forecast)) {
 			throw new WeatherServiceNotFoundException("City not found " + city, null);
 		}
 		return ResponseEntity.noContent().build();

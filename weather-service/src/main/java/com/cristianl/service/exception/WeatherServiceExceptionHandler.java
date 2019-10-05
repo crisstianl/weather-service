@@ -45,7 +45,7 @@ public class WeatherServiceExceptionHandler extends ResponseEntityExceptionHandl
 	@ExceptionHandler(WeatherServiceBadRequestException.class)
 	public final ResponseEntity<Object> handleWeatherBadRequestException(Exception ex, WebRequest request) {
 		return new ResponseEntity<Object>(
-				new WeatherServiceNotFoundException(ex.getMessage(), request.getDescription(false)),
+				new WeatherServiceBadRequestException(ex.getMessage(), request.getDescription(false)),
 				HttpStatus.BAD_REQUEST);
 	}
 
@@ -53,7 +53,6 @@ public class WeatherServiceExceptionHandler extends ResponseEntityExceptionHandl
 	public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers,
 			HttpStatus status, WebRequest request) {
 		return new ResponseEntity<Object>(
-				new WeatherServiceException("Validation failed", ex.getBindingResult().toString()),
-				HttpStatus.BAD_REQUEST);
+				new WeatherServiceException("Validation failed", ex.getBindingResult().toString()), status);
 	}
 }
