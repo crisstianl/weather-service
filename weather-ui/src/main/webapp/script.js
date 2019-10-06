@@ -119,7 +119,7 @@ function showForecast(forecast) {
 	forecastDetails.appendChild(text);
 	
 	strong = document.createElement("strong");
-	strong.innerHTML = "</br> Temparature ";
+	strong.innerHTML = "</br> Temperature ";
 	forecastDetails.appendChild(strong);
 	text = document.createTextNode(forecast.main.temp_min + " °C to " + forecast.main.temp_max + " °C");
 	forecastDetails.appendChild(text);
