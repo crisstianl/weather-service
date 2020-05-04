@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.cristianl.service.exception.WeatherServiceBadRequestException;
 import com.cristianl.service.exception.WeatherServiceNotFoundException;
 import com.cristianl.service.resource.Forecast;
 import com.cristianl.service.resource.ForecastDAO;
@@ -58,7 +59,6 @@ public class ForecastResource {
 	}
 
 	/* ***GET*** */
-
 	@RequestMapping(method = RequestMethod.GET, path = "/ping", produces = "application/text")
 	public ResponseEntity<String> ping(@RequestHeader(name = "Accept-Language", required = false) Locale locale)
 			throws Exception {
@@ -68,38 +68,54 @@ public class ForecastResource {
 
 	@GetMapping(path = "/cities/{region}", produces = "application/json")
 	public ResponseEntity<Location[]> doGetAllCities(@PathVariable(required = false) String region) throws Exception {
-		return ResponseEntity.ok(this.locationDAO.getAll(region));
+		final Location[] results = this.locationDAO.getAll(region);
+		if (results != null && results.length > 0) {
+			return ResponseEntity.ok(results);
+		}
+		throw new WeatherServiceNotFoundException("Invalid region \"" + region + "\"", null);
 	}
 
-	@GetMapping(path = "/forecast/{city}", produces = "application/json")
-	public ResponseEntity<Forecast> doGetByCity(@PathVariable(required = true) String city) throws Exception {
-		Forecast result = null;
-		if (ServiceUtils.isNumeric(city)) {
-			result = forecastDAO.get(Integer.valueOf(city), null, null);
-		} else if (ServiceUtils.isText(city)) {
-			result = forecastDAO.get(null, city, null);
-		} else if (ServiceUtils.isZipcode(city)) {
-			result = forecastDAO.get(null, null, city);
-		}
-
+	@GetMapping(path = "/forecast/{id}", produces = "application/json")
+	public ResponseEntity<Forecast> doGetByCity(@PathVariable(required = true) String id) throws Exception {
+		Forecast result = this.forecastDAO.get(Integer.valueOf(id), null, null);
 		if (result != null) {
 			return ResponseEntity.ok(result);
 		}
-		throw new WeatherServiceNotFoundException("City not found " + city, null);
+		throw new WeatherServiceNotFoundException("Invalid city id \"" + id + "\"", null);
 	}
 
 	@GetMapping(path = "/forecast", produces = "application/json")
-	public ResponseEntity<Forecast> doGetByPosition(@RequestParam(required = true) String lat,
-			@RequestParam(required = true) String lon) throws Exception {
-		Forecast result = forecastDAO.get(lat, lon);
+	public ResponseEntity<Forecast> doGetByCityParams(@RequestParam(required = false) String q,
+			@RequestParam(required = false) String code, @RequestParam(required = false) String lat,
+			@RequestParam(required = false) String lon) throws Exception {
+		Forecast result = null;
+		if (q != null && q.length() > 0) {
+			result = this.forecastDAO.get(null, q, null);
+			if (result == null) {
+				throw new WeatherServiceNotFoundException("Invalid city name \"" + q + "\"", null);
+			}
+
+		} else if (code != null && code.length() > 0) {
+			result = this.forecastDAO.get(null, null, code);
+			if (result == null) {
+				throw new WeatherServiceNotFoundException("Invalid postal code \"" + code + "\"", null);
+			}
+
+		} else if (lat != null && lon != null && lat.length() > 0 && lon.length() > 0) {
+			result = this.forecastDAO.get(lat, lon);
+			if (result == null) {
+				throw new WeatherServiceNotFoundException(
+						"Invalid coordinates for latitude \"" + lat + "\" and longitude \"" + lon + "\"", null);
+			}
+		}
+
 		if (result != null) {
 			return ResponseEntity.ok(result);
 		}
-		throw new WeatherServiceNotFoundException("Location not found ", null);
+		throw new WeatherServiceBadRequestException("Missing request parameters: q, code, lat, lon", null);
 	}
 
 	/* ***POST*** */
-
 	@PostMapping(path = "/forecast", consumes = "application/json", produces = "application/text")
 	public ResponseEntity<String> insert(@Valid @RequestBody Forecast newForecast) throws Exception {
 		forecastDAO.upsert(newForecast);
@@ -109,7 +125,6 @@ public class ForecastResource {
 	}
 
 	/* ***PUT*** */
-
 	@PutMapping(path = "/forecast", consumes = "application/json", produces = "application/text")
 	public ResponseEntity<String> update(@Valid @RequestBody Forecast newForecast) throws Exception {
 		forecastDAO.upsert(newForecast);
@@ -119,7 +134,6 @@ public class ForecastResource {
 	}
 
 	/* ***DELETE*** */
-
 	@DeleteMapping(path = "/forecast/{city}", produces = "application/text")
 	public ResponseEntity<String> remove(@PathVariable @NotNull String city) throws Exception {
 		Forecast forecast = new Forecast();

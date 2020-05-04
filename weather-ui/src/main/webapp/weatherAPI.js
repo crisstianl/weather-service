@@ -27,28 +27,41 @@ function getCities(success, error) {
 	var url = ENDPOINT + "/cities/all"
 	var callback = function() {
 		if (this.readyState == 4 && this.status == 200) { // success
-			const response = JSON.parse(this.responseText);
-			success(response);
+			success(JSON.parse(this.responseText));
 		} else if (this.readyState == 4 && this.status != 200) { // error
-			console.log(this.responseText);
-			const response = JSON.parse(this.responseText);
-			error(this.status, response);
+			console.log("Server responsed with " + this.status + " " + this.responseText);
+			if (this.responseText && this.responseText.length > 0) {
+				var response = JSON.parse(this.responseText)
+				error(this.status, response.message);
+			} else {
+				error(this.status, "server error");
+			}
 		}
 	};
 
 	doGet(url, callback);
 }
 
-function getForecast(city, success, error) {
-	var url = ENDPOINT + "/forecast/" + city;
+function getForecast(city, query, zipcode, success, error) {
+	var url = null;
+	if (city) {
+		url = ENDPOINT + "/forecast/" + city;
+	} else if (query) { 
+		url = ENDPOINT + "/forecast?q=" + query;
+	} else if (zipcode) {
+		url = ENDPOINT + "/forecast?code=" + zipcode;
+	}
 	var callback = function() {
 		if (this.readyState == 4 && this.status == 200) { // success
-			const forecast = JSON.parse(this.responseText);
-			success(forecast);
+			success(JSON.parse(this.responseText));
 		} else if (this.readyState == 4 && this.status != 200) { // error
-			console.log(this.responseText);
-			const response = JSON.parse(this.responseText);
-			error(this.status, response);
+			console.log("Server responsed with " + this.status + " " + this.responseText);
+			if (this.responseText && this.responseText.length > 0) {
+				var response = JSON.parse(this.responseText)
+				error(this.status, response.message);
+			} else {
+				error(this.status, "server error");
+			}
 		}
 	};
 
@@ -56,15 +69,18 @@ function getForecast(city, success, error) {
 }
 
 function getForecastByPosition(lat, lon, success, error) {
-	var url = ENDPOINT + "/forecast" + "?lat" + lat + "&lon=" + lon;
+	var url = ENDPOINT + "/forecast" + "?lat=" + lat + "&lon=" + lon;
 	var callback = function() {
 		if (this.readyState == 4 && this.status == 200) { // success
-			const forecast = JSON.parse(this.responseText);
-			success(forecast);
+			success(JSON.parse(this.responseText));
 		} else if (this.readyState == 4 && this.status != 200) { // error
-			console.log(this.responseText);
-			const response = JSON.parse(this.responseText);
-			error(this.status, response);
+			console.log("Server responsed with " + this.status + " " + this.responseText);
+			if (this.responseText && this.responseText.length > 0) {
+				var response = JSON.parse(this.responseText)
+				error(this.status, response.message);
+			} else {
+				error(this.status, "server error");
+			}
 		}
 	};
 

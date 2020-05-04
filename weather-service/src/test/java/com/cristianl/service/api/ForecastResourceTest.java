@@ -18,6 +18,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import com.cristianl.service.exception.WeatherServiceBadRequestException;
 import com.cristianl.service.resource.Forecast;
 import com.cristianl.service.resource.ForecastDAO;
 import com.cristianl.service.resource.Location;
@@ -98,7 +99,7 @@ public class ForecastResourceTest {
 	@Test
 	public void doGetByCityNameTest() throws Exception {
 		ForecastResource instance = getInstance();
-		ResponseEntity<Forecast> response = instance.doGetByCity("London");
+		ResponseEntity<Forecast> response = instance.doGetByCityParams("London", null, null, null);
 
 		Assert.assertNotNull(response);
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
@@ -109,7 +110,7 @@ public class ForecastResourceTest {
 	@Test
 	public void doGetByCityZipcodeTest() throws Exception {
 		ForecastResource instance = getInstance();
-		ResponseEntity<Forecast> response = instance.doGetByCity("W1A0AX");
+		ResponseEntity<Forecast> response = instance.doGetByCityParams(null, "W1A0AX", null, null);
 
 		Assert.assertNotNull(response);
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
@@ -120,12 +121,19 @@ public class ForecastResourceTest {
 	@Test
 	public void doGetByPositionTest() throws Exception {
 		ForecastResource instance = getInstance();
-		ResponseEntity<Forecast> response = instance.doGetByPosition("45", "45");
+		ResponseEntity<Forecast> response = instance.doGetByCityParams(null, null, "45", "45");
 
 		Assert.assertNotNull(response);
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 		Assert.assertNotNull(response.getBody());
 		Assert.assertEquals("London", response.getBody().getCityName());
+	}
+
+	@Test(expected = WeatherServiceBadRequestException.class)
+	public void doGetByCityExceptionTest() throws Exception {
+		ForecastResource instance = getInstance();
+		ResponseEntity<Forecast> response = instance.doGetByCityParams(null, null, null, null);
+		Assert.assertNull(response);
 	}
 
 	@Test
@@ -155,7 +163,7 @@ public class ForecastResourceTest {
 		Assert.assertNotNull(response);
 		Assert.assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
 	}
-	
+
 	@Test
 	public void removeForecastByNameTest() throws Exception {
 		ForecastResource instance = getInstance();

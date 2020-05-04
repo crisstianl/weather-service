@@ -6,6 +6,9 @@
 	.content .col-1, .content .col-2 {
 		width: 100%;
 	}
+	.content .col-2 #gmapDiv {
+		height: 320px;
+	}
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -16,6 +19,9 @@
 	.content .col-1, .content .col-2 {
 		width: 100%;
 	}
+	.content .col-2 #gmapDiv {
+		height: 360px;
+	}
 } 
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -25,11 +31,13 @@
 	}
 	.content .col-1 {
 		width: 30%;
-		min-height: 600px;
 	}
 	.content .col-2 {
 		width: 70%;
 		min-height: 600px;
+	}
+	.content .col-2 #gmapDiv {
+		height: 360px;
 	}
 } 
 
@@ -40,11 +48,13 @@
 	}
 	.content .col-1 {
 		width: 25%;
-		min-height: 600px;
 	}
 	.content .col-2 {
 		width: 75%;
 		min-height: 600px;
+	}
+	.content .col-2 #gmapDiv {
+		height: 480px;
 	}	
 } 
 
@@ -55,91 +65,158 @@
 	}	
 	.content .col-1 {
 		width: 20%;
-		min-height: 800px;
 	}
 	.content .col-2 {
 		width: 80%;
 		min-height: 800px;
 	}
+	.content .col-2 #gmapDiv {
+		height: 660px;
+	}
 }
 
 body {
 	display: table;
-	box-sizing: border-box;
 	width: 100%;
 	height: auto;
-	padding: 30px;
+	padding: 20px;
+	box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5 {
+	color: #008080;
+}
+
+/* Header */
 .header {
 	display: table-row;
 	background-color: #f1f1f1;
   	text-align: center;
-  	line-height: 130px;
-  	height: 130px;
 }
 
+/* Navigation */
 .nav {
-  	overflow: hidden;
-  	background-color: #333;
+	display: table-row;
+	box-sizing: border-box;
+	background-color: #008080;
 }
-
-.nav a {
-  	float: left;
-  	display: block;
-  	color: #f2f2f2;
+.nav ul {
+	list-style-type: none;
+	overflow: hidden;
+	cursor: pointer;
+	padding: 0;
+	margin: 10px 10px 10px 10px;
+}
+.nav ul li {
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	min-width: 50px;
+	color: white;
+	font-size: large;
   	text-align: center;
-  	padding: 14px 16px;
-  	text-decoration: none;
+}
+.nav ul li:hover {
+	background-color: #ddd;
+  	color: #008080;
+	border-bottom: 2px solid black;  
 }
 
-.nav a:hover {
-  	background-color: #ddd;
-  	color: #DB4D2E;
-  	font-weight: bold;
-  	border-bottom: 3px solid white;
-}
-
+/* Main container */
 .content {
 	display: table-row;
 	box-sizing: border-box;
-}
-
-.content .col-1 {
-	float: left;
 	background-color: #f1f1f1;
+}
+.content .col-1 {
+	display: block;
+	float: left;
 	box-sizing: border-box;
-	padding: 10px 10px 10px 20px;
+	padding: 10px 10px 0px 10px;
+}
+.content .col-2 {
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	padding: 10px 0px 0px 10px;	
+	border-left: 2px solid white;
 }
 
+/* Left menu */
+.content .col-1 .input-container {
+	display: flex;
+	width: 100%;
+}
+
+/* Search field */
+.content .col-1 .input-field {
+	width: 100%;
+	outline: none;
+	font-size: large;
+	padding: 10px 0px 10px 0px;
+}
+.content .col-1 .input-field:focus {
+	border: 2px solid #008080;
+}
+
+/* Region list */
 .content .col-1 .listLevel1 {
 	list-style-type: square;
   	overflow: hidden;
-  	padding-left: 20px;
-}
-
-.content .col-1 .listLevel1 li:hover {
+	padding-left: 20px;
 	cursor: pointer;
 }
+.content .col-1 .listLevel1 li {
+	font-size: large;
+	padding: 5px 0 5px 0;
+}
+.content .col-1 .listLevel1 li:hover {
+	color: #008080;
+}
 
+/* City list */
 .content .col-1 .listLevel2 {
 	display: none;
 	list-style-type: square;
 	padding-left: 20px;
+	color: black;
 }
-
+.content .col-1 .listLevel2 li {
+	font-size: large;
+	padding: 3px 0 3px 0;
+}
 .content .col-1 .listLevel2 li:hover {
-	cursor: pointer;
-	color: #DB4D2E;
-	font-weight: bold;
+	color: #008080;
 	text-decoration: underline;
 }
-	
-.content .col-2 {
-	float: left;
-	background-color: white;
-	box-sizing: border-box;
-	padding: 10px 10px 10px 20px;	
+
+/* Weather information and map */
+.content .col-2 #weatherInfo {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: auto;
+	font-size: large;
+	color: black; 
+}
+.content .col-2 #weatherInfo p {
+	margin: 5px 0px 5px 0px;
+	line-height: 1.5;
+}
+
+.content .col-2 #weatherInfo .forecastIcon {
+	position: absolute;
+	top: 42px;
+	left: 280px;
+	width: 70px;
+	height: 60px;
+	background-color: #e6e6e6;
+	border-radius: 12px;
+}
+
+/* Map */
+.content .col-2 #gmapDiv {
+	display: block;
+	width: 100%; 
 }
 
 .content:after {
@@ -150,39 +227,7 @@ body {
 	display: table-row;
 	background-color: #f1f1f1;
   	text-align: center;
-  	line-height: 130px;
-  	height: 130px;	
-}
-
-h2, h3 {
-	color: #DB4D2E;
-}
-
-.input-container {
-	display: flex;
-	width: 100%;
-}
-
-.input-icon {
-	padding: 10px;
-	background: #708090;
-	color: white;
-	min-width: 30px;
-	text-align: center;
-}
-
-.input-icon:hover {
-	cursor: pointer;
-}
-
-.input-field {
-	width: 100%;
-	outline: none;
-	font-size: 16px;
-}
-
-.input-field:focus {
-	border: 2px solid #708090;
+  	height: 80px;	
 }
 
 #toast {
@@ -206,6 +251,20 @@ h2, h3 {
 	However, delay the fade out process for 2.5 seconds */
 	-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
 	animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px 3px 8px;
+    font-size: large;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #4e4d4a;
+    border-radius: 10px;
 }
 
 /* Animations to fade the toast in and out */

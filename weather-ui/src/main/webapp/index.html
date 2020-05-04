@@ -20,24 +20,28 @@
 	<div id="toast"></div>
 	
 	<section class="header">
-		<h2>Today's weather</h2>
 	</section>
 	
 	<section class="nav">
-	    <a href="#" onclick="return doCityClick(this, event, '2759794')">Amsterdam</a>
-	    <a href="#" onclick="return doCityClick(this, event, '2950159')">Berlin</a>
-	    <a href="#" onclick="return doCityClick(this, event, '2800866')">Brussels</a>
-	    <a href="#" onclick="return doCityClick(this, event, '683506')">Bucharest</a>
-	    <a href="#" onclick="return doCityClick(this, event, '2618425')">Copenhagen</a>
-	    <a href="#" onclick="return doCityClick(this, event, '2643743')">London</a>
-	    <a href="#" onclick="return doCityClick(this, event, '3117732')">Madrid</a>
-	    <a href="#" onclick="return doCityClick(this, event, '524901')">Moscow</a>
-	    <a href="#" onclick="return doCityClick(this, event, '6453366')">Oslo</a>
-	    <a href="#" onclick="return doCityClick(this, event, '2988507')">Paris</a>
-	    <a href="#" onclick="return doCityClick(this, event, '3067696')">Prague</a>
-	    <a href="#" onclick="return doCityClick(this, event, '2673730')">Stockholm</a>
-	    <a href="#" onclick="return doCityClick(this, event, '3169070')">Rome</a>
-	    <a href="#" onclick="return doCityClick(this, event, '2761369')">Vienna</a>
+		<ul>
+			<li onclick="getPosition(event)">
+				<i class="fa fa-map-marker input-icon"></i>
+			</li>
+			<li onclick="doCityClick(event, '2759794')">Amsterdam</li>
+			<li onclick="doCityClick(event, '2950159')">Berlin</li>
+			<li onclick="doCityClick(event, '2800866')">Brussels</li>
+			<li onclick="doCityClick(event, '683506')">Bucharest</a>
+			<li onclick="doCityClick(event, '2618425')">Copenhagen</a>
+			<li onclick="doCityClick(event, '2643743')">London</a>
+			<li onclick="doCityClick(event, '3117732')">Madrid</li>
+			<li onclick="doCityClick(event, '524901')">Moscow</li>
+			<li onclick="doCityClick(event, '6453366')">Oslo</li>
+			<li onclick="doCityClick(event, '2988507')">Paris</li>
+			<li onclick="doCityClick(event, '3067696')">Prague</li>
+			<li onclick="doCityClick(event, '2673730')">Stockholm</li>
+			<li onclick="doCityClick(event, '3169070')">Rome</li>
+			<li onclick="doCityClick(event, '2761369')">Vienna</li>
+		</ul>
 	</section>
 	
 	<section class="content">
@@ -46,49 +50,54 @@
 			<h3>Search</h3>
 			
 			<div class="input-container">
-				<i class="fa fa-map-marker input-icon" onclick="getPosition()"></i>
-				<input id="cityName" class="input-field" type="text" placeholder="Location/City" value="" min="3" onkeypress=" return doCitySearch(this, event)"/>
+				<input id="cityName" class="input-field" type="text" placeholder="City/Zipcode" 
+					value="" min="3" onkeyup="doCitySearch(this, event)"/>
 			</div>
 	
 			<!-- country list -->
 			<ul id="regionList" class="listLevel1">
-				<li onclick="toggleRegion(this)">Europe
+				<li onclick="toggleRegion(this, event)">
+					Europe
 					<ul id="europeList" class="listLevel2"></ul>
 				</li>
-				<li onclick="toggleRegion(this)">North America
+				<li onclick="toggleRegion(this, event)">
+					North America
 					<ul id="northAmericaList" class="listLevel2"></ul>
 				</li>
-				<li onclick="toggleRegion(this)">Central America
+				<li onclick="toggleRegion(this, event)">
+					Central America
 					<ul id="centralAmericaList" class="listLevel2"></ul>
 				</li>
-				<li onclick="toggleRegion(this)">South America
+				<li onclick="toggleRegion(this, event)">
+					South America
 					<ul id="southAmericaList" class="listLevel2"></ul>
 				</li>
-				<li onclick="toggleRegion(this)">Australia
+				<li onclick="toggleRegion(this, event)">
+					Australia
 					<ul id="australiaList" class="listLevel2"></ul>
 				</li>
-				<li onclick="toggleRegion(this)">Asia
+				<li onclick="toggleRegion(this, event)">
+					Asia
 					<ul id="asiaList" class="listLevel2"></ul>
 				</li>
-				<li onclick="toggleRegion(this)">Africa
+				<li onclick="toggleRegion(this, event)">
+					Africa
 					<ul id="africaList" class="listLevel2"></ul>
 				</li>
 			</ul> 
 		</div>
 		<div class="col-2">		
-			<div id="weatherInfo" style="float: left; width:100%">
-				<img id="forecastIcon" src="https://openweathermap.org/img/wn/03d@2x.png" alt="weather" width="60" height="60">
-				<h3 id="forecastCity" style="margin: 0px 0px 10px 0px;"></h3>
-				<p id="forecastDetails" style="color: black; font-size: 16px;"></p>
+			<div id="weatherInfo">
 			</div>
 			
-			<div id="geoLocation" style="float: left; width: 100%; height: 400px;">
+			<div id="gmapDiv">
 			</div>
 		</div>
 	</section>	
 	
 	<section class="footer">
 	  <h3>&copy; Cristian Corporation</h3>
+	  <p>Developed with OpenWeatherMap and Google Maps</p>
 	</section>
 	
 	<!-- scripts -->
